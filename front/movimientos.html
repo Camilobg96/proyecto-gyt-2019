@@ -1,0 +1,102 @@
+      <div class="container">
+      <form method="_POST">
+        Codigo Cliente:<br>
+        <input id="CodCliente" type="text" name="cod" value=""><br>
+         Codigo Sucursal:<br>
+        <input id="CodSucursal" type="text" name="codigoS" value="">
+        <br> <br>
+        <a href="JavaScript:listarMovimientos()" class="btn btn-primary">Listar Movimientos</a>
+      </form>
+      <br/> <br/>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Codigo</th>                
+                <th>Fecha Creación</th>
+                <th>Fecha Vencimiento</th>
+                <th>Telefono</th>
+            </tr>
+        </thead>
+        <tbody id="cuerpo"></tbody>
+    </table>
+    </div>
+  </div>
+  <!-- Modal -->
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modalDetalles" style="visibility: hidden" id="botonTercero">Open Modal</button>
+
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modalCartera" style="visibility: hidden" id="botonCartera">Open Modal</button>
+
+<div id="modalDetalles" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Detalles del tercero</h4>
+      </div>
+      <div class="modal-body">
+        <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Codigo</th>
+                <th>NIT</th>
+                <th>Nombre</th>
+                <th>Direccion</th>
+                <th>Telefono</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody id="tablaModal"></tbody>
+    </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="modalCartera" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Carteras del tercero</h4>
+      </div>
+      <div class="modal-body">
+        <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Cliente</th>
+                <th>Detalle</th>
+                <th>Fecha</th>
+                <th>Total</th>
+                <th>Pagado</th>
+                <th>Saldo</th>
+                <th>Anticipo</th>
+            </tr>
+        </thead>
+        <tbody id="tablaModal2"></tbody>
+    </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function listarMovimientos(){
+    var CodCliente = document.getElementById("CodCliente").value;
+    $("#cuerpo").empty();
+    var php = '<?php echo listarMovimientos('+CodCliente+'); ?>';
+    console.log(php);
+    $("#cuerpo").append(php);
+}
+</script>

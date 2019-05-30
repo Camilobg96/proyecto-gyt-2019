@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <link rel="shortcut icon" href="logo.png">
+      <title>US</title>
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  </head>
+  <body style="background-color: #f5f5f5">
+  <style>
+      ul {
+        list-style-type: none;
+        margin: 20;
+        padding: 20;
+        overflow: hidden;
+        background-color: #333;
+      }
+
+      li {
+        float: left;
+      }
+
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 20px 20px;
+        text-decoration: none;
+      }
+
+      li a:hover {
+        background-color: #111;
+      }
+  </style>
+    <header>
+        <div class="jumbotron" style="background-color: #610B0B; color: #FFFFFF; padding-left: 30px;">
+            <h1><img src="logo.png" style="height: 80px;border-radius:50%; " class="navbar-text"><strong>UNIFORM SHOP</strong></h1> 
+            <p style="float: left;">Gerencia y tecnología - 2019</p>
+            <br><br>
+                       
+        </div>
+      <ul>
+        <li><a class="active" href="javascript:cargaContenido('container','terceros.html')">Terceros</a></li>
+        <li><a href="javascript:cargaContenido('container','movimientos.html')">Movimientos Cliente</a></li>     
+        <li><a href="javascript:cargarViewPedidos()">Pedidos</a></li>
+      </ul>
+    </header>
+    <br><br><br>
+      
+    <div class="container" id="container">
+      
+    </div>
+<script src="js/Ajax.js "></script>
+      <script src="js/ViewManager.js "></script>
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css ">
+      <!-- jQuery library -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <!-- Latest compiled JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js "></script>
+      <script type="text/javascript" src="js/HtmlBuilder.js"></script>
+      <script type="text/javascript">cargaContenido("container","terceros.html");</script>
+  </body>
+
+<!-- That´s all folks! -->
+</html>
